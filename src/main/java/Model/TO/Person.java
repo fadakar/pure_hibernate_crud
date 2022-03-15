@@ -1,6 +1,9 @@
 package Model.TO;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author grf
@@ -19,6 +22,12 @@ public class Person {
 
     @Column(name = "last_name", nullable = false)
     private String lastName;
+
+    // fetch = FetchType.EAGER fetch when fetch person or persons
+    // fetch = FetchType.LAZY fetch when call person.cars
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "person_id", nullable = false)
+    private List<Car> cars;
 
 
     public int getId() {
@@ -45,12 +54,22 @@ public class Person {
         this.lastName = lastName;
     }
 
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", cars=" + cars +
                 '}';
     }
 }
