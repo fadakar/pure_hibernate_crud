@@ -2,11 +2,8 @@ import Model.DAO.PersonDAO;
 import Model.TO.Car;
 import Model.TO.Person;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author grf
