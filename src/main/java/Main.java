@@ -16,7 +16,7 @@ public class Main {
 
         PersonDAO personDAO = new PersonDAO();
 
-        //---------------- add new person -----------------
+        //---------------- get all persons -----------------
         System.out.println(personDAO.all());
 
 
