@@ -48,7 +48,7 @@ public class Main {
 
 
         //---------------- delete person ------------------
-//        personDAO.delete(foundPerson);
+        personDAO.delete(foundPerson);
 
     }
 
